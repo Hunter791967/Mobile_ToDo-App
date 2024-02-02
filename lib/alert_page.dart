@@ -156,9 +156,10 @@ class _AlertTextState extends State<AlertText> {
     _todoController.clear();
   }
 
-  void _editToDoItem(String? oldText) {
-    TextEditingController controller =
-        TextEditingController(text: oldText ?? '');
+  void _editToDoItem(String id,String? newText) {
+    // TextEditingController controller =
+    //     TextEditingController(text: oldText ?? '');
+    todoList.firstWhere((item) => item.id == id).todoText = newText;
   }
 
   void _runFilter(String enterKeyword) {
